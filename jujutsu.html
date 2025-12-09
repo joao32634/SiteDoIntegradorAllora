@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Allora</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Bootstrap icons-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    </head>
+    <style>
+        input[type=search]{
+            width: 25%;
+            transition: all 0.79s ease-in-out;  
+        }
+
+        input[type=search]:focus{
+            width: 49%;
+        }
+
+        .navbar{
+            opacity: 94%;
+        }
+        /* Estado inicial dos cards */
+
+        .hover-card {
+            transition: transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
+        }
+        .hover-card:hover {
+            box-shadow: 0px 11px 22px rgba(0,0,0,0.2);
+            transform: translateY(-12px) scale(1.024);
+        }
+
+    </style>
+    <body class="bg-light">
+        <section>
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-light bg-dark p-1" style="color:white; position: fixed; width: 100%; z-index: 2">
+            <div class="container px-4 px-lg-5">
+                <a class="navbar-brand" href="./bibliotecaAllora.html" style="color: white;">Biblioteca Allora</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" 
+                aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+                        <li class="nav-item"><a class="nav-link" href="#!" style="color: white;"><i class="fa-regular fa-star me-2" style="color: white;"></i>Favoritos</a><li>
+                        <li class="nav-item dropdown ms-2">
+                            <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: white;">Comprar</a>
+                            <ul class="dropdown-menu bg-light" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item bg-light" href="#!">Todos Produtos</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="#!">Itens Populares</a></li>
+                                <li><a class="dropdown-item" href="#!">Novos Itens</a></li>
+                            </ul>
+                        </li>
+                             <li class="nav-item dropdown ms-2" > 
+                             <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: white;">Enviar para</a>
+                            <ul class="dropdown-menu bg-light m-1" aria-labelledby="navbarDropdown">
+                                <div class="header-divider">
+                                <li><input type="text" placeholder="Cidade" class="dropdown-item p-2 form" style="background-color: white;"></li>
+                                </div>
+                                <li><input type="text" placeholder="Endereço" class="dropdown-item p-2 form" style="background-color: white"></li>
+                                <li><input type="text" placeholder="CEP" class="dropdown-item p-2 form" style="background-color: white"></li>
+                            </ul>
+                        <li class="nav-item ms-2"><a class="nav-link" href="#!" style="color: gray;">Sobre</a></li>
+                    </li>
+                    </ul>
+                    <form class="d-flex">
+                        <button class="btn btn-outline-light me-2" type="submit">
+                             <!--user 2 -> fas fa-user-circle
+                             lupa -> fas fa-search
+                             carrinho -> 	fas fa-shopping-cart -->
+                            <i class="fas fa-shopping-cart " style="color: ba;"></i>
+                            Carrinho</i>
+                            <span class="badge bg-dark text-white ms-1 rounded-pill">0</span>
+                        </button>
+                    </form>
+                        </ul>
+                        <li class="nav-link nav-item dropdown ms-3">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" id="navbarDropdown" aria-expanded="false"><i class="fas fa-user-circle me-2    "></i>Usuário   </a>
+                            <ul class="dropdown-menu bg-light m-1" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item p-2" href="#">Cadastrar-se</a></li>
+                                <li><a class="dropdown-item p-2" href="#">Login</a></li>
+                                <div class="dropdown-divider"></div>
+                                <li><a class="dropdown-item p-2" href="#">Sair</a></li>
+                            </ul>
+                        </li>
+                </div>
+            </div>
+        </nav>
+        <section class="p-5">
+            <div class="container col-10 mt-5">
+                <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+                    <div class="col">
+                        <div class="rounded shadow bg-white">
+                            <!-- Product image-->
+                            <div class="col mb-5 row">
+                                <div class="row-cols-2 col-4 py-4 px-5">
+                                    <img class="card-img-top rounded card" src="https://m.media-amazon.com/images/I/61afpbf94oL._SL1000_.jpg" alt="...">
+                                    <div class="mt-2 justify-content-center d-flex text-warning col-12" style="text-align: justify;">
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-fill"></div>
+                                    </div>
+                                </div>
+                                    <div class="col-8 p-4 text-left">
+                                        <h4>Jujutsu Kaisen - Vol. 30</h4>
+                                        <div class="badge bg-dark text-white position-absolute p-2" style="top: 1.5rem; right: 1.5rem; font-size: 15px;">Popular do Autor!</div>
+
+                                        <p class="small border-bottom">
+                                        Por: Gege Akutami 
+                                        </p>
+                                        <p class="mb-5 me-5 ms-auto" style="text-align: justify;"> Jujutsu Kaisen conta a história de Yuji Itadori, um adolescente que se torna o hospedeiro da maldição mais poderosa, Ryomen Sukuna, ao engolir um de seus dedos.
+                                             No mundo da história, as emoções negativas da humanidade se transformam em Maldições, monstros perigosos que apenas Feiticeiros Jujutsu podem combater.
+                                             Yuji junta-se à Escola de Feitiçaria de Jujutsu de Tóquio para aprender a usar sua energia amaldiçoada e lutar contra essas criaturas, em uma missão para coletar os dedos de Sukuna e erradicar os espíritos malignos. 
+                                        </p>
+                                        <br><br><br><br>
+                                    <div class="justify-content-center" style="text-align: center;">
+                                        <p>R$78,00</p>
+                                    </div>
+                                    <div class="bg-transparent">
+                                        <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Comprar</a></div>
+                                    </div>
+                                    </div>
+                                </div>
+                            </div>               
+                        </div>
+                    </div>  
+                </div>
+            </div>
+            <div class="container mt-2 border-bottom justify-content-center text-center">
+                <h3>Outras Opções</h4>
+            </div>
+            <div class="container px-4 px-lg-5 mt-5">
+                <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+                    <div class="col mb-5">
+                        <div class="card h-100 hover-card">
+                            <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem;">Mais Vendido!</div>
+                            <!-- Product image-->
+                            <a href="./onePiece.html">
+                            <img class="card-img-top d-flex h-100 rounded" src="https://m.media-amazon.com/images/I/71g0v+leMLL._SL1308_.jpg" alt="..." />
+                            <!-- Product details-->
+                            </a>
+                            <div class="card-body p-4">
+                                <div class="text-center">
+                                    <!-- Product name-->
+                                    <h5 class="mb-auto mt-auto">One Piece - Vol. 111</h5>
+                                    <p>Eiichiro Oda
+                                    </p>
+                                    <div class="text-warning justify-content-center mb-auto d-flex">
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-fill"></div>
+                                    </div>
+                                    <!-- Product price-->
+                                    R$82,90<br>
+                                </div>
+                            </div>
+                            <!-- Product actions-->
+                            <div class="card-footer p-3 pt-0 border-top-0 bg-transparent">
+                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="./onePiece.html">Ver Mais</a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col mb-5">
+                        <div class="card h-100 hover-card" id="cardShow">
+                            <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem;">Mais Vendido!</div>
+                            <!-- Sale badge-->
+                            <!-- Product image-->
+                            <a href="./hunterHunter.html">
+                            <img class="card-img-top d-flex h-100 border rounded" src="https://m.media-amazon.com/images/I/61NPpt5HC6L._SL1000_.jpg" alt="..." />
+                            <!-- Product details-->
+                            </a>
+                            <div class="card-body p-4">
+                                <div class="text-center">
+                                    <!-- Product name-->
+                                    <h5 class="mb-auto mt-auto">Hunter x Hunter - Vol. 1</h5>
+                                    <p>Yoshihiro Togashi</p>
+                                    <div class="text-warning justify-content-center mb-auto d-flex">
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-fill"></div>
+                                    </div>
+                                    <!-- Product price-->
+                                    R$65,00
+                                </div>
+                            </div>
+                            <!-- Product actions-->
+                            <div class="card-footer p-3 pt-0 border-top-0 bg-transparent">
+                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="./hunterHunter.html">Ver Mais</a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col mb-5">
+                        <div class="card h-100 hover-card" id="cardShow">
+                            <!-- Product image-->
+                            <a href="./blackClover.html">
+                            <img class="card-img-top d-flex h-100 rounded" src="https://m.media-amazon.com/images/I/91WgpA0pjOL._SL1500_.jpg" alt="..." />
+                            <!-- Product details-->
+                            </a>
+                            <div class="card-body p-4">
+                                <div class="text-center">
+                                    <!-- Product name-->
+                                    <h5 class="mb-auto mt-auto">Black Clover - Vol. 1</h5>
+                                    <p>Yuki Tabata</p>
+                                    <!-- Product reviews-->
+                                    <div class="d-flex justify-content-center small text-warning mb-auto">
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-fill"></div>    
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-half"></div>
+                                    </div>
+                                    <!-- Product price-->
+                                    $54,00
+                                </div>
+                            </div>
+                            <!-- Product actions-->
+                            <div class="card-footer p-3 pt-0 border-top-0 bg-transparent">
+                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="./blackClover.html">Ver mais</a></div>
+                            </div>
+                        </div>           
+                    </div>
+                </div>
+        </section>
+    <footer class="py-4 bg-dark mt-5">
+        <div class="container"><p class="m-0 text-center text-light">Copyright &copy; Allora 2025</p></div>
+    </footer>
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="js/scripts.js"></script>
+    </body>
+</html>

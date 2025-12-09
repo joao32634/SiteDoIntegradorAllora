@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Allora</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Bootstrap icons-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+        <link rel="stylesheet" href="https://github.com/CrisEryk/CrisErykDesignerWeb1/tree/36138371dcadc3559c4bc61e40ceb73ec1ed5bf6/projeto-main/projeto-main/startbootstrap-shop-homepage-gh-pages/startbootstrap-shop-homepage-gh-pages">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        
+    </head>
+    <style>
+        input[type=search]{
+            width: 25%;
+            transition: all 0.79s ease-in-out;  
+        }
+
+        input[type=search]:focus{
+            width: 49%;
+        }
+
+        .navbar{
+            opacity: 94%;
+        }
+
+        /* Estado inicial dos cards */
+        .card {
+            opacity: 0;               /* invisível no início */
+            transform: translateY(30px); /* desce 30px */
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out; /* animação suave */
+        }
+
+        /* Quando o JS adiciona a classe show */
+        .card.show {
+            opacity: 1;               /* torna visível */
+            transform: translateY(0); /* volta para a posição normal */
+        }
+
+        /* Hover dos cards continua funcionando */
+        .hover-card:hover {
+            box-shadow: 0px 11px 22px rgba(0,0,0,0.2);
+            transform: translateY(-15px) scale(1.024);
+            transition: transform 0.38s ease-in-out, box-shadow 0.38s ease-in-out;
+        }
+        /* Estilo do menu lateral */
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #212529;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+padding: 8px 8px 8px 32px;
+text-decoration: none;
+font-size: 25px;
+color: #d1d1d1;
+display: block;
+transition: 0.3s;
+}
+
+.sidenav a:hover {
+color: #848282;
+}
+
+.sidenav .closebtn {
+position: absolute;
+top: 0;
+right: 25px;
+font-size: 36px;
+}
+.openbtn {
+font-size: 20px;
+cursor: pointer;
+}
+
+#main {
+transition: margin-left .5s;
+}
+
+        
+    </style>
+    <body class="bg-light">
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-light bg-dark" style="color:white; position: fixed; width: 100%; z-index: 2">
+<div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+    <a href="index.html">Início</a>
+    <a href="bibliotecaAllora.html">Biblioteca</a>
+    <a href="#services">Serviços</a>
+    <a href="#clients">Clientes</a>
+    <a href="#contact">Contato</a>
+</div>
+
+    <span style="position: absolute; left: 1%;" class="openbtn" onclick="openNav()">☰ Menu</span>
+
+    <script>
+    function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+    }
+
+    function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+    }
+    </script>
+
+            <div class="container px-4 px-lg-5">
+                <a class="navbar-brand" href="#!" style="color: white;">Biblioteca Allora</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+                        <li class="nav-item"><a class="nav-link" href="#!" style="color: white;"><i class="fa-regular fa-star me-2" style="color: white;"></i>Favoritos</a><li>
+                        <li class="nav-item"><a class="nav-link" href="#!" style="color: white;">Sobre</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: white;">Comprar</a>
+                            <ul class="dropdown-menu bg-light" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="#!">Todos Produtos</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="#!">Itens Populares</a></li>
+                                <li><a class="dropdown-item" href="#!">Novos Itens</a></li>
+                            </ul>
+                        </li>
+                             <li class="nav-item dropdown" > 
+                             <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: white;">Enviar para</a>
+                            <ul class="dropdown-menu bg-light" aria-labelledby="navbarDropdown" >
+                                <li><input type="text" placeholder="Cidade" class="dropdown-item" style="background-color: white;"></li>
+                                <li><hr class="dropdown-divider" style="background-color: white;"></li>
+                                <li><input type="text" placeholder="Endereço" class="dropdown-item" style="background-color: white"></li>
+                                <li><hr class="dropdown-divider" style="background-color: white;"></li>
+                                <li><input type="text" placeholder="CEP" class="dropdown-item" style="background-color: white"></li>
+                    </ul>
+                    </li>
+                    </ul>
+            
+                    <form class="d-flex">
+                        <button class="btn btn-outline-light me-2" type="submit">
+                             <!--user 2 -> fas fa-user-circle
+                             lupa -> fas fa-search
+                             carrinho -> 	fas fa-shopping-cart -->
+                            <i class="fas fa-shopping-cart " style="color: ba;"></i>
+                            Carrinho</i>
+                            <span class="badge bg-dark text-white ms-1 rounded-pill">0</span>
+                        </button>
+                    </form>
+                        </ul>
+                        <li class="nav-link nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" id="navbarDropdown" aria-expanded="false"><i class="fas fa-user-circle" style="height: 25px; width: 25px;" class="me-2"></i>Usuário  </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="#">Cadastrar-se</a></li>
+                                <li><a class="dropdown-item" href="#">Login</a></li>
+                                <div class="dropdown-divider"></div>
+                                <li><a class="dropdown-item" href="#">Sair</a></li>
+                            </ul>
+                        </li>
+                            <div style="display: flex; align-items: center; border-radius: 6px; padding: 5px 10px; width: 250px; position: absolute; left: 51%; top: 11%;">
+  <i class="fa fa-search" style="margin-right: 9px; color: #b9b2b2;"></i>
+  <input type="text" placeholder="Pesquisar..." 
+         style="border: groove; outline: none; flex: 1;">
+</div>            
+                
+                    </div>
+            </div>
+        </nav>
+        <!-- Header-->
+        <header class="bg-light">
+            <img src="assets/bannerallora.png" style=" width: 100%; height: 400px; object-fit: cover;">
+        </header>
+        
+        <header class="bg-light">  
+        <div class="container">     
+        <div class="card bg-white border rounded shadow align-items-center mt-2 p-4 mt-5">
+            <h2 class="text-center mb-3">Pesquise mais em nosso acervo</h2>
+            <input class="form-control mr-sm2 text-center" type="search" placeholder="Buscar" style="border-radius: 25px;">
+        </div>
+        </div>
+        </header>
+        <!-- Section-->
+        <section class="py-4">
+            <div class="container mt-5 text-center border-bottom" id="alvo">
+                <h2>Recomendações</h2>
+            </div>
+            <div class="container px-4 px-lg-5 mt-5">
+                <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+                    <div class="col mb-5">
+                        <div class="card h-100 hover-card">
+                            <!-- Product image-->
+                            <a href="./admPub.html">
+                            <img class="card-img-top d-flex h-100 rounded" src="https://m.media-amazon.com/images/I/61YK-HDlPwL._UF1000,1000_QL80_.jpg" alt="..." />
+                            </a>
+                            <!-- Product details-->
+                            <div class="card-body p-4">
+                                <div class="text-center">
+                                    <!-- Product name-->
+                                    <h5 class="mb-auto mt-auto">Administração Pública</h5>
+                                    <p>Francisco Nascimento<br>
+                                        Maurício Barreto
+                                    </p>
+                                    <div class="text-warning justify-content-center mb-auto d-flex">
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-half"></div>
+                                    </div>
+                                    <!-- Product price-->
+                                    R$80,00<br>
+                                </div>
+                            </div>
+                            <!-- Product actions-->
+                            <div class="card-footer p-3 pt-0 border-top-0 bg-transparent">
+                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="./admPub.html">Ver Mais</a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col mb-5">
+                        <div class="card h-100 hover-card" id="cardShow">
+                            <!-- Sale badge-->
+                            <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Mais Vendido!</div>
+                            <!-- Product image-->
+                            <a href="./admMod.html">
+                            <img class="card-img-top d-flex h-100 rounded" src="https://cdn.atenaeditora.com.br/atenaeditora/documentos/ebook_imagem/2662/conversions/Capa-site-Administra%C3%A7%C3%A3o-moderna-estrat%C3%A9gias-para-o-sucesso-organizacional-3-optimized.webp" alt="..." />
+                            </a>
+                            <!-- Product details-->
+                            <div class="card-body p-4">
+                                <div class="text-center">
+                                    <!-- Product name-->
+                                    <h5 class="mb-auto mt-auto">Administração Moderna</h5>
+                                    <p>Carlos Eduardo Sanches</p>
+                                    <!-- Product reviews-->
+                                    <div class="d-flex justify-content-center small text-warning mb-auto">
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-fill"></div>
+                                    </div>
+                                    <!-- Product price-->
+                                    R$58,00 <br>
+                                </div>
+                            </div>
+                            <!-- Product actions-->
+                            <div class="card-footer p-3 pt-0 border-top-0 bg-transparent">
+                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="./admMod.html">Ver Mais</a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col mb-5">
+                        <div class="card h-100 hover-card" id="cardShow">
+                            <!-- Sale badge-->
+                            <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Popular do Autor!</div>
+                            <!-- Product image-->
+                            <a href="./admTeoria.html">
+                            <img class="card-img-top d-flex h-100 rounded" src="https://a-static.mlcdn.com.br/1500x1500/livro-introducao-a-teoria-geral-da-administracao/magazineluiza/222979400/83dca46f410bd5d01530fc1d3144c329.jpg" alt="..." />
+                            </a>
+                            <!-- Product details-->
+                            <div class="card-body p-4">
+                                <div class="text-center">
+                                    <!-- Product name-->
+                                    <h5 class="mb-auto mt-auto">Teoria Geral da Administração</h5>
+                                    <p>Idalberto Chiavenato</p>
+                                    <div class="text-warning justify-content-center mb-auto d-flex">
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-half"></div>
+                                    </div>
+                                    <!-- Product price-->
+                                    R$25,00
+                                </div>
+                            </div>
+                            <!-- Product actions-->
+                            <div class="card-footer p-3 pt-0 border-top-0 bg-transparent">
+                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="./admTeoria.html">Ver Mais</a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col mb-5">
+                        <div class="card h-100 hover-card" id="cardShow">
+                            <!-- Product image-->
+                             <a href="./admConc.html">
+                            <img class="card-img-top d-flex h-100 rounded" src="https://cdn.awsli.com.br/600x700/2495/2495784/produto/271177355dba9101c7b.jpg" alt="..." />
+                            </a>
+                            <!-- Product details-->
+                            <div class="card-body p-4">
+                                <div class="text-center">
+                                    <!-- Product name-->
+                                    <h5 class="mb-auto mt-auto">Conceitos da Administração</h5>
+                                    <p>Marco Antônio Conejero</p>
+                                    <!-- Product reviews-->
+                                    <div class="d-flex justify-content-center small text-warning mb-auto">
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-fill"></div>
+                                    </div>
+                                    <!-- Product price-->
+                                    R$40,00
+                                </div>
+                            </div>
+                            <!-- Product actions-->
+                            <div class="card-footer p-3 pt-0 border-top-0 bg-transparent">
+                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="./admConc.html">Ver mais</a></div>
+                            </div>
+                        </div>           
+                    </div>
+                </div>
+            </div>
+            <div class="container text-center border-bottom mt-5" id="alvo">
+                <h2>Filosofia</h2>
+            </div>
+            <div class="container px-4 px-lg-5 mt-5">
+                <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+                    <div class="col mb-5">
+                        <div class="card h-100 hover-card" id="cardShow">
+                            <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem;">Popular do Autor!</div>
+                            <a href="./noiteBrancas.html">
+                            <img class="card-img-top d-flex h-100 rounded" src="https://m.media-amazon.com/images/I/7143D7foVmL._SL1500_.jpg" alt="..."/>
+                            </a>
+                            <div class="card-body p-4">
+                                <div class="text-center">
+                                    <h5 class="mb-auto mt-auto">Noites Brancas</h5>
+                                    <p>Fiódor Dostoiévski</p>
+                                    <div class="text-warning small justify-content-center d-flex mb-auto">
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-fill"></div>
+                                    </div>
+                                    R$35,90<br>
+                                </div>
+                            </div>
+                            <div class="card-footer p-3 pt-0 border-top-0 bg-transparent">
+                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="./noiteBrancas.html">Ver mais</a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col mb-5">
+                        <div class="card h-100 hover-card" id="cardShow">    
+                            <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem;">Mais Vendido!</div>
+                            <a href="./memSubsolo.html">
+                            <img class="card-img-top d-flex h-100 rounded" src="https://m.media-amazon.com/images/I/61NVGA5o3jL._SL1500_.jpg" alt="..."/>
+                            </a>
+                            <div class="card-body p-4">
+                                <div class="text-center">
+                                    <h5 class="mb-auto mt-auto">Memórias do Subsolo</h5>
+                                    <p>Fiódor Dostoiévski</p>
+                                    <div class="text-warning small justify-content-center d-flex mb-auto">
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-fill"></div>
+                                    </div>
+                                    R$37,90<br>
+                                </div>
+                            </div>
+                            <div class="card-footer p-3 pt-0 border-top-0 bg-transparent">
+                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="./memSubsolo.html">Ver mais</a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col mb-5">
+                        <div class="card h-100 hover-card" id="cardShow">  
+                            <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem;">Popular do Autor!</div>  
+                            <a href="./metamorfose.html">
+                            <img class="card-img-top d-flex h-100 rounded" src="https://m.media-amazon.com/images/I/715JOcuqSSL._AC_UL480_FMwebp_QL65_.jpg" alt="..."/>
+                            </a>
+                            <div class="card-body p-4">
+                                <div class="text-center">
+                                    <h5 class="mb-auto mt-auto">A Metamorfose</h5>
+                                    <p>Franz Kafka</p>
+                                    <div class="text-warning justify-content-center mb-auto d-flex">
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-half"></div>
+                                    </div>
+                                    R$45,90<br>
+                                </div>
+                            </div>
+                            <div class="card-footer p-3 pt-0 border-top-0 bg-transparent">
+                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="./metamorfose.html">Ver mais</a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col mb-5">
+                        <div class="card h-100 hover-card" id="cardShow">    
+                            <a href="./alemDoBemEDoMal.html">
+                            <img class="card-img-top d-flex h-100 rounded" src="https://m.media-amazon.com/images/I/712rqkUhTFL._SL1500_.jpg" alt="..."/>
+                            </a>
+                            <div class="card-body p-4">
+                                <div class="text-center">
+                                    <h5 class="mb-auto mt-auto">Além do Bem e do Mal</h5>
+                                    <p>Friedrich Nietzsche</p>
+                                    <div class="text-warning mb-auto justify-content-center d-flex">
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-fill"></div>
+                                    </div>
+                                    R$55,90<br>
+                                </div>
+                            </div>
+                            <div class="card-footer p-3 pt-0 border-top-0 bg-transparent">
+                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="./alemDoBemEDoMal.html">Ver mais</a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container text-center border-bottom mt-5" id="alvo">
+                <h2>Literatura Nacional</h2>
+            </div>
+            
+            <div class="container px-4 px-lg-5 mt-5">
+                <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+
+                    <!-- Torto Arado -->
+                    <div class="col mb-5">
+                        <div class="card h-100 hover-card" id="cardShow">
+                            <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem;">Mais Vendido!</div>
+                            <a href="./tortoArado.html">
+                            <img class="card-img-top d-flex h-100 rounded" src="https://m.media-amazon.com/images/I/71GyHj5glWL._SL1500_.jpg" alt="..."/>
+                            </a>
+                            <div class="card-body p-4">
+                                <div class="text-center">
+                                    <h5 class="mb-auto mt-auto">Torto Arado</h5>
+                                    <p>Itamar Vieira Júnior</p>
+                                    <div class="text-warning small justify-content-center d-flex mb-auto">
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-fill"></div>
+                                    </div>
+                                    R$35,90<br>
+                                </div>
+                            </div>
+                            <div class="card-footer p-3 pt-0 border-top-0 bg-transparent">
+                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="./tortoArado.html">Ver mais</a></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Dom Casmurro -->
+                    <div class="col mb-5">
+                        <div class="card h-100 hover-card" id="cardShow"> 
+                            <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem;">Popular do Autor!</div>   
+                            <a href="./domCasmurro.html">
+                            <img class="card-img-top d-flex h-100 rounded" src="https://m.media-amazon.com/images/I/61x1ZHomWUL._SL1200_.jpg" alt="..."/>
+                            </a>
+                            <div class="card-body p-4">
+                                <div class="text-center">
+                                    <h5 class="mb-auto mt-auto">Dom Casmurro</h5>
+                                    <p class="text-center">Machado de Assis</p>
+                                    <div class="text-warning small justify-content-center d-flex mb-auto">
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-half"></div>
+                                    </div>
+                                    R$29,90<br>
+                                </div>
+                            </div>
+                            <div class="card-footer p-3 pt-0 border-top-0 bg-transparent">
+                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="./domCasmurro.html">Ver mais</a></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Úrsula -->
+                    <div class="col mb-5">
+                        <div class="card h-100 hover-card" id="cardShow">    
+                            <a href="./ursula.html">
+                            <img class="card-img-top d-flex h-100 rounded" src="https://m.media-amazon.com/images/I/61Adln6n8qL._SL1500_.jpg" alt="..."/>
+                            </a>
+                            <div class="card-body p-4">
+                                <div class="text-center">
+                                    <h5 class="mb-auto mt-auto">Úrsula</h5>
+                                    <p>Mª Firmina dos Reis</p>
+                                <div class="text-warning small justify-content-center d-flex mb-auto">
+                                    <div class="bi-star-fill"></div>
+                                    <div class="bi-star-fill"></div>
+                                    <div class="bi-star-fill"></div>
+                                    <div class="bi-star-fill"></div>
+                                    <div class="bi-star-half"></div>
+                                </div>
+                                    R$32,90<br>
+                                </div>
+                            </div>
+                            <div class="card-footer p-3 pt-0 border-top-0 bg-transparent">
+                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="./ursula.html">Ver mais</a></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Vidas Secas -->
+                    <div class="col mb-5">
+                        <div class="card h-100 hover-card" id="cardShow">    
+                            <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Popular do Autor!</div>
+                            <a href="./vidasSecas.html">
+                            <img class="card-img-top d-flex h-90 rounded" src="https://m.media-amazon.com/images/I/71NYL2AbBIL._SL1500_.jpg" alt="..."/>
+                            </a>
+                            <div class="card-body p-3">
+                                <div class="text-center">
+                                    <h5 class="mb-auto mt-auto">Vidas Secas</h5>
+                                    <p>Graciliano Ramos</p>
+                                    <div class="d-flex justify-content-center small text-warning mb-auto">
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-fill"></div>
+                                    </div>
+                                    R$24,90<br>
+                                </div>
+                            </div>
+                            <div class="card-footer p-3 pt-0 border-top-0 bg-transparent">
+                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="./vidasSecas.html">Ver mais</a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container text-center border-bottom mt-5" id="alvo">
+                <h2>Fantasia</h2>
+            </div>
+            <div class="container px-4 px-lg-5 mt-5">
+                <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+                    <div class="col mb-5">
+                        <div class="card h-100 hover-card" id="cardShow">
+                            <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem;">Mais Vendido!</div>
+                            <a href="./senhorDosAneis.html">
+                            <img class="card-img-top d-flex h-100 rounded" src="https://m.media-amazon.com/images/I/81hCVEC0ExL._SL1500_.jpg" alt="..."/>
+                            </a>
+                            <div class="card-body p-4">
+                                <div class="text-center">
+                                    <h5 class="mb-auto mt-auto">Senhor dos Anéis: A Sociedade do Anel</h5>
+                                    <p>J. R. R. Tolkien</p>
+                                    <div class="text-warning small justify-content-center d-flex mb-auto">
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-fill"></div>
+                                    </div>
+                                    R$40,90<br>
+                                </div>
+                            </div>
+                            <div class="card-footer p-3 pt-0 border-top-0 bg-transparent">
+                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="./senhorDosAneis.html">Ver mais</a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col mb-5">
+                        <div class="card h-100 hover-card" id="cardShow">
+                            <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem;">Mais Vendido!</div>
+                            <a href="./percyJackson.html">
+                            <img class="card-img-top d-flex h-100 rounded" src="https://m.media-amazon.com/images/I/61bmaEI9amL._SL1005_.jpg" alt="..."/>
+                            </a>
+                            <div class="card-body p-4">
+                                <div class="text-center">
+                                    <h5 class="mb-auto mt-auto">Percy Jackson e O Mar de Monstros</h5>
+                                    <p>Rick Riordan</p>
+                                    <div class="text-warning small justify-content-center d-flex mb-auto">
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-fill"></div>
+                                    </div>
+                                    R$38,90<br>
+                                </div>
+                            </div>
+                            <div class="card-footer p-3 pt-0 border-top-0 bg-transparent">
+                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="./percyJackson.html">Ver mais</a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col mb-5">
+                        <div class="card h-100 hover-card" id="cardShow">
+                            <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem;">Popular do Autor!</div>
+                            <a href="./harryPotter.html">
+                            <img class="card-img-top d-flex h-100 rounded" src="https://m.media-amazon.com/images/I/81ibfYk4qmL._SL1500_.jpg" alt="..."/>
+                            </a>
+                            <div class="card-body p-4">
+                                <div class="text-center">
+                                    <h5 class="mb-auto mt-auto">Harry Potter e a Pedra Filosofal</h5>
+                                    <p>J. K. Rowling</p>
+                                    <div class="text-warning small justify-content-center d-flex mb-auto">
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-half"></div>
+                                    </div>
+                                    R$48,90<br>
+                                </div>
+                            </div>
+                            <div class="card-footer p-3 pt-0 border-top-0 bg-transparent">
+                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="./harryPotter.html">Ver mais</a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col mb-5">
+                        <div class="card h-100 hover-card" id="cardShow">
+                            <a href="./cronicasNarnia.html">
+                            <img class="card-img-top d-flex h-100 rounded" src="https://m.media-amazon.com/images/I/71yJLhQekBL._SL1251_.jpg" alt="..."/>
+                            </a>
+                            <div class="card-body p-4">
+                                <div class="text-center">
+                                    <h5 class="mb-auto mt-auto">As Crônicas de Nárnia</h5>
+                                    <p>C. S. Lewis</p>
+                                    <div class="text-warning small justify-content-center d-flex mb-auto">
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-half"></div>
+                                    </div>
+                                    R$78,90<br>
+                                </div>
+                            </div>
+                            <div class="card-footer p-3 pt-0 border-top-0 bg-transparent">
+                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="./cronicasNarnia.html">Ver mais</a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container mt-5 text-center border-bottom" id="alvo">
+                <h2>Mangás</h2>
+            </div>
+            <div class="container px-4 px-lg-5 mt-5">
+                <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+                    <div class="col mb-5">
+                        <div class="card h-100 hover-card">
+                            <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem;">Mais Vendido!</div>
+                            <!-- Product image-->
+                            <a href="./onePiece.html">
+                            <img class="card-img-top d-flex h-100 rounded" src="https://m.media-amazon.com/images/I/71g0v+leMLL._SL1308_.jpg" alt="..." />
+                            <!-- Product details-->
+                            </a>
+                            <div class="card-body p-4">
+                                <div class="text-center">
+                                    <!-- Product name-->
+                                    <h5 class="mb-auto mt-auto">One Piece - Vol. 111</h5>
+                                    <p>Eiichiro Oda
+                                    </p>
+                                    <div class="text-warning justify-content-center mb-auto d-flex">
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-fill"></div>
+                                    </div>
+                                    <!-- Product price-->
+                                    R$82,90<br>
+                                </div>
+                            </div>
+                            <!-- Product actions-->
+                            <div class="card-footer p-3 pt-0 border-top-0 bg-transparent">
+                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="./onePiece.html">Ver Mais</a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col mb-5">
+                        <div class="card h-100 hover-card" id="cardShow">
+                            <!-- Sale badge-->
+                            <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Popular do Autor!</div>
+                            <!-- Product image-->
+                            <a href="./jujutsu.html">
+                            <img class="card-img-top d-flex h-100 rounded" src="https://m.media-amazon.com/images/I/61afpbf94oL._SL1000_.jpg" alt="..." />
+                            <!-- Product details-->
+                            </a>
+                            <div class="card-body p-4">
+                                <div class="text-center">
+                                    <!-- Product name-->
+                                    <h5 class="mb-auto mt-auto">Jujutsu Kaisen - Vol. 30</h5>
+                                    <p>Gege Akutami</p>
+                                    <!-- Product reviews-->
+                                    <div class="d-flex justify-content-center small text-warning mb-auto">
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-fill"></div>
+                                    </div>
+                                    <!-- Product price-->
+                                    R$78,00 <br>
+                                </div>
+                            </div>
+                            <!-- Product actions-->
+                            <div class="card-footer p-3 pt-0 border-top-0 bg-transparent">
+                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="./jujutsu.html">Ver Mais</a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col mb-5">
+                        <div class="card h-100 hover-card" id="cardShow">
+                            <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem;">Mais Vendido!</div>
+                            <!-- Sale badge-->
+                            <!-- Product image-->
+                            <a href="./hunterHunter.html">
+                            <img class="card-img-top d-flex h-100 border rounded" src="https://m.media-amazon.com/images/I/61NPpt5HC6L._SL1000_.jpg" alt="..." />
+                            <!-- Product details-->
+                            </a>
+                            <div class="card-body p-4">
+                                <div class="text-center">
+                                    <!-- Product name-->
+                                    <h5 class="mb-auto mt-auto">Hunter x Hunter - Vol. 1</h5>
+                                    <p>Yoshihiro Togashi</p>
+                                    <div class="text-warning justify-content-center mb-auto d-flex">
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-fill"></div>
+                                    </div>
+                                    <!-- Product price-->
+                                    R$65,00
+                                </div>
+                            </div>
+                            <!-- Product actions-->
+                            <div class="card-footer p-3 pt-0 border-top-0 bg-transparent">
+                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="./hunterHunter.html">Ver Mais</a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col mb-5">
+                        <div class="card h-100 hover-card" id="cardShow">
+                            <!-- Product image-->
+                            <a href="./blackClover.html">
+                            <img class="card-img-top d-flex h-100 rounded" src="https://m.media-amazon.com/images/I/91WgpA0pjOL._SL1500_.jpg" alt="..." />
+                            <!-- Product details-->
+                            </a>
+                            <div class="card-body p-4">
+                                <div class="text-center">
+                                    <!-- Product name-->
+                                    <h5 class="mb-auto mt-auto">Black Clover - Vol. 1</h5>
+                                    <p>Yuki Tabata</p>
+                                    <!-- Product reviews-->
+                                    <div class="d-flex justify-content-center small text-warning mb-auto">
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-half"></div>
+                                    </div>
+                                    <!-- Product price-->
+                                    $54,00
+                                </div>
+                            </div>
+                            <!-- Product actions-->
+                            <div class="card-footer p-3 pt-0 border-top-0 bg-transparent">
+                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="./blackClover.html">Ver mais</a></div>
+                            </div>
+                        </div>           
+                    </div>
+                </div>
+            </div>
+    </section>
+    <!-- Footer-->
+    <footer class="py-5 bg-dark mt-5">
+        <div class="container"><p class="m-0 text-center text-light">Copyright &copy; Allora 2025</p></div>
+    </footer>
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="js/scripts.js"></script>
+    </body>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+  const cards = document.querySelectorAll(".card"); // pega todos os cards
+
+  const observer = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+
+        // Pega a posição do card dentro da linha (coluna)
+        const colIndex = Array.from(entry.target.parentElement.parentElement.children)
+          .indexOf(entry.target.parentElement); 
+
+        // Define delay em função da coluna: 0.1s por posição
+        const delay = colIndex * 295; // 100ms por coluna
+
+        setTimeout(() => {
+          entry.target.classList.add("show"); // animação de aparecer
+        }, delay);
+
+        obs.unobserve(entry.target); // para de observar
+      }
+    });
+  }, { threshold: 0.2 });
+
+  cards.forEach(card => observer.observe(card)); // observa cada card
+});
+
+    </script>
+</html>
+<!--https://m.media-amazon.com/images/I/715JOcuqSSL._AC_UL480_FMwebp_QL65_.jpg-->
+<!-- quarto e despejo
+     são bernardo-->

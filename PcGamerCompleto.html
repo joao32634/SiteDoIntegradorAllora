@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Allora</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Bootstrap icons-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+        <link rel="stylesheet" href="https://github.com/CrisEryk/CrisErykDesignerWeb1/tree/36138371dcadc3559c4bc61e40ceb73ec1ed5bf6/projeto-main/projeto-main/startbootstrap-shop-homepage-gh-pages/startbootstrap-shop-homepage-gh-pages">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<style>
+body {
+    height: 100vh; /* Faz o fundo ocupar 100% da tela */
+    
+    /* Define a imagem */
+    background-image: url(''); /* Caminho para a imagem */
+    background-size: cover; /* Faz a imagem cobrir toda a área */
+    background-position: center; /* Centraliza a imagem */
+    background-repeat: repeat; /* Evita repetição */
+    justify-content: center;
+    align-items: center;    
+}
+/* Estilo do menu lateral */
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #212529;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+padding: 8px 8px 8px 32px;
+text-decoration: none;
+font-size: 25px;
+color: #d1d1d1;
+display: block;
+transition: 0.3s;
+}
+
+.sidenav a:hover {
+color: #848282;
+}
+
+.sidenav .closebtn {
+position: absolute;
+top: 0;
+right: 25px;
+font-size: 36px;
+}
+
+.openbtn {
+font-size: 20px;
+cursor: pointer;
+}
+
+#main {
+transition: margin-left .5s;
+}
+
+/* Layout principal com flex */
+.productContainer {
+    display: flex;
+    align-items: flex-start;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 20px;
+}
+
+    .gallery {
+      display: flex;
+      flex-direction: row;
+      padding: 20px;
+    }
+
+    .thumbnails {
+      display: flex;
+      flex-direction: column;
+      margin-right: 20px;
+    }
+
+    .thumbnails img {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 5px;
+      margin-bottom: 10px;
+      border: 2px groove;
+      cursor: pointer;
+    }
+
+    .thumbnails img:hover {
+      border: 2px groove #000000;
+    }
+
+    .main-image {
+      width: 600px;
+      height: 600px;
+      border: 1px hidden #000000;
+      border-radius: 10px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+          flex-shrink: 0;
+
+    }
+
+    .main-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+        .main-image img:hover {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+    }
+
+
+/* IMAGEM PRINCIPAL COM ZOOM */
+.productImage {
+    flex-shrink: 0;
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.image-zoom {
+    width: 600px;
+    height: 600px;
+    overflow: hidden;
+    position: relative;
+}
+
+.image-zoom img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.image-zoom:hover img {
+    transform: scale(1.2); /* efeito de zoom ao passar o mouse */
+}
+
+/* DETALHES DO PRODUTO */
+.info {
+    flex: 1;
+    max-width: 600px;
+    }
+
+    .info h1 {
+    font-size: 2em;
+    color: #333;
+    margin-bottom: 10px;
+    }
+
+    .info p {
+      color: #555;
+    }
+
+    .price {
+      font-size: 1.5em;
+    color: #e53935;
+    font-weight: bold;
+    margin-bottom: 15px;
+    }
+    .description {
+    font-size: 1em;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.attributes p {
+    font-size: 1em;
+    color: #333;
+    margin: 5px 0;
+}
+
+    .buy-button {
+      background-color:  #292b2e;
+    color: #fff;
+    font-size: 1.1em;
+    padding: 15px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    }
+
+    .buy-button:hover {
+      background-color: #030303;
+    }
+
+ </style>
+    </head>
+    <body>
+        <!-- Navigation-->
+        
+        <nav class="navbar navbar-expand-lg navbar-light bg-dark" style="color:white; position: fixed; width: 100%; left: -0px;
+        top: -3px;  z-index: 2">
+<div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+    <a href="http://127.0.0.1:5500/bibliotecaAllora.html">Biblioteca</a>
+    <a href="#services">Serviços</a>
+    <a href="#clients">Clientes</a>
+    <a href="#contact">Contato</a>
+</div>
+
+    <span style="position: absolute; left: 1%;" class="openbtn" onclick="openNav()">☰ Menu</span>
+
+    <script>
+        function openNav() {
+        document.getElementById("mySidenav").style.width = "250px";
+        }
+
+        function closeNav() {
+        document.getElementById("mySidenav").style.width = "0";
+        }
+    </script>
+
+            <div class="container px-4 px-lg-5">
+                <a class="navbar-brand" href="index.html" style="color: white;">Allora</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="#!" style="color: white;">Início</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#!" style="color: white;">Sobre</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: white;">Comprar</a>
+                            <ul class="dropdown-menu bg-light" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="#!">Todos Produtos</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="#!">Itens Populares</a></li>
+                                <li><a class="dropdown-item" href="#!">Novos Itens</a></li>
+                            </ul>
+                        </li>
+                             <li class="nav-item dropdown" > 
+                             <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: white;">Enviar para</a>
+                            <ul class="dropdown-menu bg-light" aria-labelledby="navbarDropdown" >
+                                <li><input type="text" placeholder="Cidade" class="dropdown-item" style="background-color: white;"></li>
+                                <li><hr class="dropdown-divider" style="background-color: white;"></li>
+                                <li><input type="text" placeholder="Endereço" class="dropdown-item" style="background-color: white"></li>
+                                <li><hr class="dropdown-divider" style="background-color: white;"></li>
+                                <li><input type="text" placeholder="CEP" class="dropdown-item" style="background-color: white"></li>
+                    </ul>
+                    </li>
+                    </ul>
+            
+                    <form class="d-flex">
+                        <button class="btn btn-outline-light me-2" type="submit">
+                             <!--user 2 -> fas fa-user-circle
+                             lupa -> fas fa-search
+                             carrinho -> 	fas fa-shopping-cart -->
+                            <i class="fas fa-shopping-cart " style="color: ba;"></i>
+                            Carrinho</i>
+                            <span class="badge bg-dark text-white ms-1 rounded-pill">0</span>
+                        </button>
+                    </form>
+                        </ul>
+                        <li class="nav-link nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" id="navbarDropdown" aria-expanded="false"><i class="fas fa-user-circle" style="height: 25px; width: 25px;" class="me-2"></i>Usuário  </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="#">Cadastrar-se</a></li>
+                                <li><a class="dropdown-item" href="#">Login</a></li>
+                                <div class="dropdown-divider"></div>
+                                <li><a class="dropdown-item" href="#">Sair</a></li>
+                            </ul>
+                        </li>
+                </div>
+            </div>
+        </nav>
+        <!-- Header-->
+        <header class="bg-light">
+            
+        </header>
+        <!-- Section-->
+    <section>
+        <br><br>
+                        <div class="container px-4 px-lg-2 mt-5">
+                            <div class="col mb-5">
+                                <div class="card h-10">
+                                    <!-- Sale badge-->
+                                    <div class="productContainer">
+                                            <div class="gallery">
+                                                <div class="thumbnails" id="thumbnails">
+                                                <img src="images/PCgamer.jpg"
+                                                        data-full="images/PCgamer.jpg"
+                                                        alt="Vista 1" style="object-fit: contain;">
+                                                <img src="images/PCgamer2.jpg"
+                                                        data-full="images/PCgamer2.jpg"
+                                                        alt="Vista 2" style="object-fit: contain;">
+                                                <img src="images/PCgamer3.jpg"
+                                                        data-full="images/PCgamer3.jpg"
+                                                        alt="Vista 3" style="object-fit: contain;">
+                                                <img src="images/PCgamer4.jpg"
+                                                        data-full="images/PCgamer4.jpg"
+                                                        alt="Vista 4" style="object-fit: contain;">
+                                                
+                                                    </div>
+                                                <div class="main-image image-zoom">
+                                                    
+                                                    <img id="mainImage"
+                                                            src="images/PCgamer.jpg"
+                                                            alt="Imagem principal" style="object-fit: contain;">
+                                                </div>
+                                            </div>
+
+                                            <div class="info">
+                                             <div class="badge bg-dark text-white" style="position: relative; left: 1px; font-size: 80%; top: 0.5rem; right: 0.5rem">Item em Promoção!</div>
+                                             <br>
+                                             <br>
+
+                                                <h3>PC Gamer Completo Intel Core i7 16GB SSD 512GB Monitor 19" Kit Gamer Strong Tech.</h3>
+                                                <p class="description">PC Gamer Completo com processador Intel Core i7, 16GB de memória RAM, SSD de 512GB para alta velocidade, monitor de 19 polegadas e Kit Gamer Strong Tech incluso. Ideal para jogos, estudos e trabalho, oferecendo desempenho, rapidez e experiência visual de qualidade.</p>
+                                                <hr>
+                                                <div class="attributes">
+                                                    <p><strong>Cor:</strong> Preto</p>  
+                                                    <p><strong>Tamanho/Monitor:</strong> 19 polegadas </p>
+                                                    <p><strong>Marca:</strong> Strong Tech</p>
+                                                    <span class="d-flex huge text-warning" style="color: orange;">
+                                                    <p><strong>Avaliações:</strong><span style="color: orange;"> 4,2</span>
+                                                <span class="bi-star-fill" style="color: orange;"></span>
+                                                <span class="bi-star-fill" style="position: relative; left: -3px; color: orange;"></span>
+                                                <span class="bi-star-fill" style="position: relative; left: -5px; color: orange;"></span>
+                                                <span class="bi-star-fill" style="position: relative; left: -8px; color: orange;"></span>
+                                                <span class="bi-star" style="position: relative; left: -10px; color: orange;"></span>
+                                                <span style="position: relative; left: -12px; color: black;"> 2.568
+                                                </span></p>
+                                            
+                                            
+
+
+                                                </div>
+                                            <span><i class="fa-solid fa-truck-fast" style="color: #727070;"></i> Frete grátis para todo o Brasil em compras acima de R$199,00</span>
+                                            <div class="col-12" style=" position: relative; left: 0%; margin-bottom: 10px;">
+                                                <strong>Opções de pagamento:</strong>
+                                                <ul style="list-style: none; padding-left: 0; margin-top: 10px;">
+                                                    <li style="color: #1a237e;"><i class="fa-regular fa-credit-card"></i> Cartão de crédito (Visa, MasterCard, Elo, Amex)</li>
+                                                    <li style="color: #388e3c;"><i class="fa-solid fa-barcode"></i> Boleto bancário</li>
+                                                    <li style="color: #00bfae;"><i class="fa-brands fa-pix"></i> Pix</li>
+                                                    <li style="color: #ffb300;"><i class="fa-solid fa-money-bill-wave"></i> Débito online</li>
+                                                    <li style="color: #c62828;"><i class="fa-solid fa-credit-card"></i> 2x sem juros no cartão</li>
+                                                </ul>
+                                            </div>
+                                            <hr>
+                                            <span class="text-muted text-decoration-line-through price" style="font-size: 20px;">R$1.700,00</span>
+                                            
+                                            <span class="ms-2" style="left: 0%; font-size: 23px; color: red;">15%OFF</span>
+                                            <br>
+                                            <span  style="color: #000000; font-size: 30px;"><span style="position: relative; font-size: 20px; top: -8px;">R$</span>1.255<span style="position: relative; font-size: 20px; top: -8px;">56</span></span>
+            
+                                            <br><br>
+                                            
+                                            <button class="buy-button" style="color: white;">Comprar agora</button>
+                                            <div style="margin-top: 20px; font-size: 14px; color: gray;">
+                                        </div>
+                                        
+                                            </div>
+                                        
+                                        </div>    
+                                    </div>
+
+                        <script>
+                            const thumbnailsContainer = document.getElementById('thumbnails');
+                            const thumbnails = thumbnailsContainer.querySelectorAll('img');
+                            const mainImage = document.getElementById('mainImage');
+
+                            // Guarda a imagem padrão
+                            const defaultImage = mainImage.src;
+
+                            thumbnails.forEach(thumb => {
+                            thumb.addEventListener('click', () => {
+                                const newSrc = thumb.getAttribute('data-full');
+                                mainImage.src = newSrc;
+                            });
+                            });
+
+                            // Quando o mouse sai da área das miniaturas, volta para a imagem padrão
+                        </script>
+    </section>
+        <!-- Footer-->
+        <footer class="py-5 bg-dark" style=" position: absolute; width: 104%; left: -4%; height: 40%; ">
+            <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Your Website 2025</p></div>
+        </footer>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+
+    </section>
+        <!-- Footer-->
+        <footer class="py-5 bg-dark" style=" position: absolute; width: 104%; left: -4%; height: 40%; ">
+            <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Your Website 2025</p></div>
+        </footer>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+    </body>
+</html>
