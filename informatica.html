@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Allora</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Bootstrap icons-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+        <link rel="stylesheet" href="https://github.com/CrisEryk/CrisErykDesignerWeb1/tree/36138371dcadc3559c4bc61e40ceb73ec1ed5bf6/projeto-main/projeto-main/startbootstrap-shop-homepage-gh-pages/startbootstrap-shop-homepage-gh-pages">
+                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<style>
+.hover-card {
+    transition: transform 0.38s ease-in-out, box-shadow 0.38s ease-in-out;
+}
+.hover-card:hover {
+    transform: translateY(-15px) scale(1.03);
+    box-shadow: 0px 11px 22px rgba(0,0,0,0.2);
+}
+body {
+    margin: 0; /* Remove espaço padrão do body */
+    height: 100vh; /* Faz o fundo ocupar 100% da tela */
+    
+    /* Define a imagem */
+    background-image: url(''); /* Caminho para a imagem */
+    background-size: cover; /* Faz a imagem cobrir toda a área */
+    background-position: center; /* Centraliza a imagem */
+    background-repeat: repeat; /* Evita repetição */
+    justify-content: center;
+    align-items: center;    
+}
+/* Estilo do menu lateral */
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #212529;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+padding: 8px 8px 8px 32px;
+text-decoration: none;
+font-size: 25px;
+color: #d1d1d1;
+display: block;
+transition: 0.3s;
+}
+
+.sidenav a:hover {
+color: #848282;
+}
+
+.sidenav .closebtn {
+position: absolute;
+top: 0;
+right: 25px;
+font-size: 36px;
+}
+
+.openbtn {
+font-size: 20px;
+cursor: pointer;
+}
+
+#main {
+transition: margin-left .5s;
+}
+
+i{
+    width: 20px;
+    height: auto;
+}
+ </style>
+    </head>
+    <body>
+        <!-- Navigation-->
+        
+        <nav class="navbar navbar-expand-lg navbar-light bg-dark" style="color:white; position: fixed; width: 100%; z-index: 2">
+<div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+    <a href="bibliotecaAllora.html">Biblioteca</a>
+    <a href="#services">Serviços</a>
+    <a href="#clients">Clientes</a>
+    <a href="#contact">Contato</a>
+</div>
+
+    <span style="position: absolute; left: 1%;" class="openbtn" onclick="openNav()">☰ Menu</span>
+
+    <script>
+    function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+    }
+
+    function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+    }
+    </script>
+
+            <div class="container px-4 px-lg-5">
+                <a class="navbar-brand" href="index.html" style="color: white;">Allora</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+                        <li class="nav-item"><a class="nav-link" href="#!" style="color: white;"><i class="fa-regular fa-star me-2" style="color: white;"></i>Favoritos</a><li>
+                        <li class="nav-item"><a class="nav-link" href="#!" style="color: white;">Sobre</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: white;">Comprar</a>
+                            <ul class="dropdown-menu bg-light" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="#!">Todos Produtos</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="#!">Itens Populares</a></li>
+                                <li><a class="dropdown-item" href="#!">Novos Itens</a></li>
+                            </ul>
+                        </li>
+                             <li class="nav-item dropdown" > 
+                             <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: white;">Enviar para</a>
+                            <ul class="dropdown-menu bg-light" aria-labelledby="navbarDropdown" >
+                                <li><input type="text" placeholder="Cidade" class="dropdown-item" style="background-color: white;"></li>
+                                <li><hr class="dropdown-divider" style="background-color: white;"></li>
+                                <li><input type="text" placeholder="Endereço" class="dropdown-item" style="background-color: white"></li>
+                                <li><hr class="dropdown-divider" style="background-color: white;"></li>
+                                <li><input type="text" placeholder="CEP" class="dropdown-item" style="background-color: white"></li>
+                    </ul>
+                    </li>
+                    </ul>
+            
+                    <form class="d-flex">
+                        <button class="btn btn-outline-light me-2" type="submit">
+                             <!--user 2 -> fas fa-user-circle
+                             lupa -> fas fa-search
+                             carrinho -> 	fas fa-shopping-cart -->
+                            <i class="fas fa-shopping-cart " style="color: ba;"></i>
+                            Carrinho</i>
+                            <span class="badge bg-dark text-white ms-1 rounded-pill">0</span>
+                        </button>
+                    </form>
+                        </ul>
+                        <li class="nav-link nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" id="navbarDropdown" aria-expanded="false"><i class="fas fa-user-circle" style="height: 25px; width: 25px;" class="me-2"></i>Usuário  </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="#">Cadastrar-se</a></li>
+                                <li><a class="dropdown-item" href="#">Login</a></li>
+                                <div class="dropdown-divider"></div>
+                                <li><a class="dropdown-item" href="#">Sair</a></li>
+                            </ul>
+                        </li>
+                            <div style="display: flex; align-items: center; border-radius: 6px; padding: 5px 10px; width: 250px; position: absolute; left: 51%; top: 11%;">
+  <i class="fa fa-search" style="margin-right: 9px; color: #b9b2b2;"></i>
+  <input id="Pesquisa" type="text" placeholder="Pesquisar..." 
+         style="border: groove; outline: none; flex: 1;">
+         
+</div>            
+                
+                    </div>
+            </div>
+        </nav>
+        <script>
+            const pesquisaItem = document.getElementById('Pesquisa');
+            pesquisaItem.addEventListener('keypress', function (e) {
+                if (e.key === 'Enter') {
+                    e.preventDefault();
+                    const pesquisaValor = pesquisaItem.value.toLowerCase();
+                    if (pesquisaValor.includes('informatica')) {
+                        window.location.href = 'informatica.html';
+                    } else if (pesquisaValor.includes('eletronicos')) {
+                        window.location.href = 'eletronicos.html';
+                    } else if (pesquisaValor.includes('roupas')) {
+                        window.location.href = 'roupas.html';
+                    } else {
+                        alert('Nenhum resultado encontrado para: ' + pesquisaValor);
+                    }
+                }
+            });
+        </script>
+        <!-- Header-->
+        <header class="bg-light">
+            <img src="./assets/bannerallora.png" style=" width: 100%; height: 40%; object-fit: cover;">
+            
+        </header>
+        <!-- Section-->
+        <section class="py-5 " style="background-image: url()">
+            <div class="container mb-5" style="position: relative; top: -40%;" >
+  <i class="fa fa-search" style="margin-right: 9px; color: #979494; display: flex; align-items: center; border-radius: 6px; padding: 5px 10px; width: 250px; position: absolute; left: 6%; top: 68%; ">
+  <input type="text" placeholder="Pesquisar..." 
+         style="border: groove; outline: none; flex: 1; height: 30px;"></i>
+</div>            
+    <div class="container mt-5 text-center border-bottom">
+                <h3>Informática</h3>
+            </div>
+
+            <div class="container px-4 px-lg-5 mt-5">
+                <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+                    
+                    <div class="col mb-5">
+                        <div class="card h-100 hover-card">
+                            <!-- Sale badge-->
+                            <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem; z-index: 1;">Item em Promoção!</div>
+                            <!-- Product image-->
+                             <div class="container mt-4">
+                            <a href="PCEscritório.html">
+                                <img class="card-img-top d-flex h-90" 
+                                src="images/51+Oph294eL._AC_SL1001_.jpg" alt="..." />
+                            </div></a>
+                            <hr class="mt-5">
+                            
+                            <!-- Product details-->
+                            <div class="card-body p-4">
+                                <div class="text-center">
+                                    <!-- Product name-->
+                                    <h5 class="fw-bolder" style="font-size: medium;">PC CPU Desktop Computador completo Core I5 16gb Ram Ssd 480gb+monitor 19"+teclado e mouse fio WINDOWS 11</h5>
+                                    <!-- Product reviews-->
+                                    <div class="d-flex justify-content-center small text-warning mb-2">
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-fill"></div>
+                                        <div style="color: black; text-indent: 4px;">20.587</div>
+                                    </div>                              <div class="justify-content-center d-flex small text-warning mb-2"><div style="color: rgb(138, 137, 137);">5</div>
+                                 </div>
+
+                                    <!-- Product price-->
+                                    <span class="text-muted text-decoration-line-through"><b>R$1850,00</b></span>
+                                    <span style="font-size: 16px; color: red;"><b>15%OFF</b></span>
+                                    <br>
+                                    <span style="position: relative; font-size: 12px; top: -8px;"><b>R$</b> </span><span style="font-size: 18px;"><b>1.580</b></span><span style="position: relative; font-size: 10px; top: -8px;"><b>15</b></span>
+                                </div>
+                            </div>
+                            <!-- Product actions-->
+                            <div style="height: 380hv;" class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="PCEscritório.html">Ver mais</a></div>
+                            </div>
+                        </div>
+                        
+                            <!-- Product image-->
+                            <!-- Product details-->
+                            
+                    
+                    </div>
+                    <div class="col mb-5">
+                        <div class="card h-100 hover-card">
+                            <!-- Sale badge-->
+                            <!-- Product image-->
+                             <div class="container mt-4"><a href="PCGamerCustoBenéficio.html">
+                            <img class="card-img-top d-flex h-90" src="images/PCgamerCusto1.jpg" alt="..." /></a>
+                            </div>
+                            <br>
+                            <hr class="mt-1">
+                            <!-- Product details-->
+                            <div class="card-body p-4">
+                                <div class="text-center">
+                                    <!-- Product name-->
+                                    <h5 class="fw-bolder" style="font-size: medium;">PC GAMER COMPLETO GTX 1650 4GB DDR5, I5 GERAÇÃO 4.4GHZ, SSD 480GB, 16GB DDR4 (2x8GB DDR4)</h5>
+                                    <!-- Product reviews-->
+                                    <div class="d-flex justify-content-center small text-warning mb-2">
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-half"></div>
+                                        <div style="color: black; text-indent: 4px; ">5.687</div>
+                                    </div>                              <div class="justify-content-center d-flex small text-warning mb-2"><div style="color: rgb(138, 137, 137);">4,5</div>
+                                 </div>
+
+                                    <!-- Product price-->
+                                    <span style="position: relative; font-size: 12px; top: -8px;"><b>R$</b> </span><span style="font-size: 18px;"><b>3.337</b></span><span style="position: relative; font-size: 10px; top: -8px;"><b> 00</b></span>
+                                </div>
+                            </div>
+                            <!-- Product actions-->
+                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="Apple Ipad Pro.html">Ver mais</a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col mb-5">
+                        <div class="card h-100 hover-card">
+                            <!-- Sale badge-->
+                            <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem; z-index: 1;">Item em Promoção!</div>
+                            <!-- Product image-->
+                             <div class="container mt-4">
+                            <a href="notlenovo.html"> <img class="card-img-top d-flex h-95;" style="height: 120%;" src="https://m.media-amazon.com/images/I/713GzsYLBbL._AC_SL1500_.jpg" alt="..."/></a>
+                            </div>
+                            <br><br><br>
+                            <hr class="mt-2">
+                            <!-- Product details-->
+                            <div class="card-body p-4">
+                                <div class="text-center">
+                                    <!-- Product name-->
+                                     
+                                    <h5 class="fw-bolder" style="font-size: medium;">Notebook Lenovo IdeaPad Slim 3 15IRH10 Intel Core i7-13620H 16GB 512GB SSD </h5>
+                                    <!-- Product price-->
+                                                                                                            <div class="d-flex justify-content-center small text-warning mb-2">
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-half"></div>
+                                        <div style="color: black; text-indent: 4px;">10.547</div>
+                                    </div>
+                                                                     <div class="justify-content-center d-flex small text-warning mb-2"><div style="color: rgb(138, 137, 137);">4,9</div>
+                                 </div>
+
+
+                                    <span class="text-muted text-decoration-line-through"><b>R$4.559,05</b></span>
+                                    <span style="font-size: 16px; color: red;"><b>15%OFF</b></span>
+                                    <br>
+                                    <span style="position: relative; font-size: 12px; top: -8px;"><b>R$</b> </span><span style="font-size: 18px;"><b>4.274</b></span><span style="position: relative; font-size: 10px; top: -8px;"><b>05</b></span>
+                                </div>
+                            </div>
+                            <!-- Product actions-->
+                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="notlenovo.html">Ver mais</a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col mb-5">
+                        <div class="card h-100 hover-card w-30">
+                            <!-- Product image-->
+                             <div class="container mt-2">
+                            <a href="Echodot.html"> <img class="card-img-top d-flex h-80" style="height: 107%;" src="https://m.media-amazon.com/images/I/71xoR4A6q-L._AC_SL1000_.jpg" alt="..." />
+                            </div></a>
+                            <br><br>
+                            <hr>
+                            <!-- Product details-->
+                            <div class="card-body p-4">
+                                <div class="text-center">
+                                    <!-- Product name-->
+                                    <h5 class="fw-bolder" style="font-size: medium;">Echo Dot (Geração mais recente) | O Echo Dot com o melhor som já lançado | Cor Preta</h5>
+                                    <!-- Product reviews-->
+                                    <div class="d-flex justify-content-center small text-warning mb-2; z-index 2;">
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-half"></div>
+                                        <div style="text-indent: 4px; color: black;">15.678</div>
+                                    </div>
+                                        <div class="justify-content-center d-flex small text-warning mb-2"><div style="color: rgb(138, 137, 137);">4,3</div>
+                                 </div>
+
+                                    <!-- Product price-->
+                                     
+                                    <span style="position: relative; font-size: 12px; top: -8px;"><b>R$ </b></span> <span style="font-size: 18px;"><b>449</b></span><span style="position: relative; font-size: 12px; top: -8px;"><b>44</b>
+                                </div>
+                            </div>
+                            <!-- Product actions-->
+                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="Echodot.html">Ver mais</a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+        <!-- Footer-->
+        <footer class="footer mt-auto py-5 bg-dark" style="position: absolute; bottom: -150%; width: 100%; height: auto;">
+            <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Your Website 2025</p></div>
+        </footer>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+    </body>
+</html>

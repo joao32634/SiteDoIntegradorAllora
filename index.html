@@ -158,13 +158,32 @@ i{
                         </li>
                             <div style="display: flex; align-items: center; border-radius: 6px; padding: 5px 10px; width: 250px; position: absolute; left: 51%; top: 11%;">
   <i class="fa fa-search" style="margin-right: 9px; color: #b9b2b2;"></i>
-  <input type="text" placeholder="Pesquisar..." 
+  <input id="Pesquisa" type="text" placeholder="Pesquisar..." 
          style="border: groove; outline: none; flex: 1;">
+         
 </div>            
                 
                     </div>
             </div>
         </nav>
+        <script>
+            const pesquisaItem = document.getElementById('Pesquisa');
+            pesquisaItem.addEventListener('keypress', function (e) {
+                if (e.key === 'Enter') {
+                    e.preventDefault();
+                    const pesquisaValor = pesquisaItem.value.toLowerCase();
+                    if (pesquisaValor.includes('informatica')) {
+                        window.location.href = 'informatica.html';
+                    } else if (pesquisaValor.includes('eletronicos')) {
+                        window.location.href = 'eletronicos.html';
+                    } else if (pesquisaValor.includes('roupas')) {
+                        window.location.href = 'roupas.html';
+                    } else {
+                        alert('Nenhum resultado encontrado para: ' + pesquisaValor);
+                    }
+                }
+            });
+        </script>
         <!-- Header-->
         <header class="bg-light">
             <img src="./assets/bannerallora.png" style=" width: 100%; height: 40%; object-fit: cover;">
